@@ -10,7 +10,8 @@ set(
   Profiler_Disabled_TEST.cc
 )
 
-if(NOT WIN32)
+# See https://github.com/conda-forge/gz-common-feedstock/pull/14#issuecomment-1532137418
+if(NOT WIN32 AND NOT APPLE)
   list(APPEND PROFILER_TESTS Profiler_Error_TEST.cc)
 endif()
 
